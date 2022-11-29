@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata: 
+  name: "demo-mlflow"
+  namespace: mlflow
+spec:
+  ttlSecondsAfterFinished: 100
+  backoffLimit: 0
+  template:
+    spec:
+      containers:
+      - name: "demo-mlflow"
+        image: "mlflow-docker-example"
+        command: ["python /var/myapp/train.py --alpha 0.5 --l1-ratio 0.5"]
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            memory: 256Mi
+      restartPolicy: Never

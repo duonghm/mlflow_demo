@@ -1,0 +1,5 @@
+{
+  "kube-context": "docker-for-desktop",
+  "repository-uri": "duonghm/mlflow_demo/docker", 
+  "kube-job-template": ""
+}
