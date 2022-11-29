@@ -1,7 +1,8 @@
 name: docker-example
 
 docker_env:
-  image: mlflow-docker-example
+  image: docker.io/duonghm/mlflow-docker-example:latest
+  environment: [["MLFLOW_TRACKING_URI", "http://192.168.56.1:5000"]]
 
 entry_points:
   main:
